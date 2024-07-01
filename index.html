@@ -1,15 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>APP RH</title>
+    <title>Concert Tickets</title>
     <style>
         body {
-            background-color: lightgreen;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .concert {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .cart {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>APP RH</h1>
-    <p>APP para gestão dos Recursos Humanos.</p>
+    <header>
+        <h1>Concert Tickets</h1>
+    </header>
+    <div class="concert">
+        <h2>Concert Name</h2>
+        <p>Location: Concert Venue</p>
+        <p>Price: $50</p>
+        <button onclick="addToCart()">Buy Ticket</button>
+    </div>
+    <div class="concert">
+        <h2>Another Concert</h2>
+        <p>Location: Another Venue</p>
+        <p>Price: $40</p>
+        <button onclick="addToCart()">Buy Ticket</button>
+    </div>
+    <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cartItems"></ul>
+        <button onclick="buyTickets()">Buy Tickets</button>
+    </div>
+    <script>
+        function addToCart() {
+            // Add selected concert to shopping cart
+            var cartItems = document.getElementById('cartItems');
+            var item = document.createElement('li');
+            item.textContent = "Concert Name - $50";
+            cartItems.appendChild(item);
+        }
+        
+        function buyTickets() {
+            // Process purchase of tickets in shopping cart
+            alert('Tickets purchased successfully!');
+            // You can add more functionality here, like sending a request to a payment gateway
+        }
+    </script>
 </body>
 </html>
