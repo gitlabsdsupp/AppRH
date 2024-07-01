@@ -4,10 +4,14 @@ on:
   push:
     branches:
       - master
+      - uat
+      - dev
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - master
+      - uat
+      - dev
 
 jobs:
   build_and_deploy_job:
